@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
   void _onLoading() {
     _login();
     new Future.delayed(new Duration(seconds: 5), () {
-      if (datalogin['status'] == 'ERR') {
+      if (datalogin['error'] == 'Unauthorised') {
         showDialog(
           context: context,
           builder: (BuildContext context) {

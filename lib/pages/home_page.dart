@@ -11,6 +11,7 @@ import 'package:smarttani/pages/hasilPanen.dart';
 import 'package:smarttani/pages/kelompokTani.dart';
 import 'package:smarttani/pages/pembibitan.dart';
 import 'package:smarttani/pages/perawatan.dart';
+import 'package:smarttani/pages/search.dart';
 import 'package:smarttani/settings.dart' as setting;
 import 'package:http/http.dart' as http;
 
@@ -207,7 +208,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Cari(),
+                      ),
+                    );
+                  },
                   icon: Icon(TablerIcons.search),
                 ),
               ],
