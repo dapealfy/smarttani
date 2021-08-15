@@ -67,7 +67,8 @@ class _PembibitanState extends State<Pembibitan> {
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 200 / 280,
+              childAspectRatio: (MediaQuery.of(context).size.width - 135) /
+                  (MediaQuery.of(context).size.width),
             ),
             itemBuilder: (context, index) {
               return Container(

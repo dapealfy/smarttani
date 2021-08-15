@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
             // return object of type Dialog
             return AlertDialog(
               title: Text("Gagal"),
-              content: new Text("Nomor / Password salah!"),
+              content: new Text("Username / Password salah!"),
               actions: <Widget>[
                 // usually buttons at the bottom of the dialog
                 new FlatButton(

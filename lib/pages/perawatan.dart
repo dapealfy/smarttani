@@ -68,7 +68,8 @@ class _PerawatanState extends State<Perawatan> {
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              childAspectRatio: 200 / 310,
+              childAspectRatio: (MediaQuery.of(context).size.width - 170) /
+                  (MediaQuery.of(context).size.width),
             ),
             itemBuilder: (context, index) {
               return Container(

@@ -60,6 +60,22 @@ class _CariState extends State<Cari> {
       perawatan_ = [];
       // print(pembibitan);
       print(pembibitan);
+      // if (text.toLowerCase().contains('pembibitan')) {
+      //   text.replaceAll("pembibitan", '');
+      //   pembibitan.forEach((data) {
+      //     if (data['jenis'].toLowerCase().contains(text.toLowerCase()))
+      //       pembibitan_.add(data);
+      //   });
+      // } else if (text.toLowerCase().contains('perawatan')) {
+      //   text.replaceAll("perawatan", '');
+      //   perawatan.forEach((data) {
+      //     if (data['jenis_hama'].toLowerCase().contains(text.toLowerCase()))
+      //       perawatan_.add(data);
+      //     if (data['pembibitan']['jenis']
+      //         .toLowerCase()
+      //         .contains(text.toLowerCase())) perawatan_.add(data);
+      //   });
+      // } else {
       pembibitan.forEach((data) {
         if (data['jenis'].toLowerCase().contains(text.toLowerCase()))
           pembibitan_.add(data);
@@ -71,6 +87,7 @@ class _CariState extends State<Cari> {
             .toLowerCase()
             .contains(text.toLowerCase())) perawatan_.add(data);
       });
+      // }
     });
   }
 
@@ -83,23 +100,26 @@ class _CariState extends State<Cari> {
             children: [
               SizedBox(height: 70),
               SizedBox(height: 20),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'Pembibitan',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              pembibitan_.length == 0
+                  ? Container()
+                  : Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      child: Text(
+                        'Pembibitan',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
               GridView.builder(
                 itemCount: pembibitan_.length,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 200 / 280,
+                  childAspectRatio: (MediaQuery.of(context).size.width - 135) /
+                      (MediaQuery.of(context).size.width),
                 ),
                 itemBuilder: (context, index) {
                   return Container(
@@ -210,23 +230,26 @@ class _CariState extends State<Cari> {
                 },
               ),
               SizedBox(height: 20),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'Perawatan',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+              perawatan_.length == 0
+                  ? Container()
+                  : Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      child: Text(
+                        'Perawatan',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
               GridView.builder(
                 itemCount: perawatan_.length,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 200 / 310,
+                  childAspectRatio: (MediaQuery.of(context).size.width - 170) /
+                      (MediaQuery.of(context).size.width),
                 ),
                 itemBuilder: (context, index) {
                   return Container(
