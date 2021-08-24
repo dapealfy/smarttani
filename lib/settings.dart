@@ -1,1 +1,1 @@
-var url_api = 'http://smart-tani.weirdprojecttest.com/';
+var url_api = 'https://smart-tani.weirdprojecttest.com/';
